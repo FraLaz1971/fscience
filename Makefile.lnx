@@ -1,0 +1,15 @@
+include MakefileF77.in
+TARGET1 = cookbook
+TARGETS = $(TARGET1)
+OUTFILES = *TESTFILEZ.FITS*
+
+$(TARGET1): $(OBJ)
+	$(FC) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+all: $(TARGETS)
+	echo "done all targets"
+
+.PHONY: clean
+clean:
+	rm -f $(OBJ) $(TARGETS) $(OUTFILES)
+

@@ -1,0 +1,14 @@
+FC=f77
+FL=f77
+EEXE =
+OEXE = .o
+SRC = $(wildcard *.f)
+OBJ = $(SRC:.f=.o)
+FFLAGS = -c
+FDFLAGS = -o
+LDFLAGS = -L.
+LIBS = -lfitsio
+SRCDIR = ./
+OBJDIR = ./
+BINDIR = ./
+RM = rm -f

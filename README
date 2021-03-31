@@ -1,6 +1,10 @@
 # to compile on linux
-make -f Makefile.lnx 
-# to delete generated files
+make -f Makefile.lnx cookbook
+# to delete some generated files
 make -f Makefile.lnx clean
+# to delete all generated files
+make -f Makefile.lnx distclean
+#
+needs libfitsio.a fortran library
 
 

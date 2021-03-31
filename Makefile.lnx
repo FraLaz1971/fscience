@@ -1,15 +1,28 @@
 include MakefileF77.in
+LIBFITSIO = fitsio503/libfitsio.a
 TARGET1 = cookbook
 TARGETS = $(TARGET1)
 OUTFILES = *TESTFILEZ.FITS*
+LIBS = $(LIBFITSIO)
 
-$(TARGET1): $(OBJ)
-	$(FC) -o $@ $^ $(LDFLAGS) $(LIBS)
+.PHONY: clean  all
 
 all: $(TARGETS)
 	echo "done all targets"
 
-.PHONY: clean
+$(LIBFITSIO):
+	cd fitsio503; \
+	./configure; \
+	make all
+
+$(TARGET1): $(OBJ) $(LIBFITSIO)
+	$(FC) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+
 clean:
-	rm -f $(OBJ) $(TARGETS) $(OUTFILES)
+	rm -f $(OBJ) $(OUTFILES)
+
+distclean: clean
+	rm -f $(TARGETS) $(LIBFITSIO)
+
 

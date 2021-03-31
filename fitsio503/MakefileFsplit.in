@@ -1,0 +1,3 @@
+SYSPEC = fitslinx
+fsplit: fsplit.c
+	$(CC)     fsplit.c   -o fsplit

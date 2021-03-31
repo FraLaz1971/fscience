@@ -1,0 +1,24 @@
+#
+# Dummy Makefile for fitsio library:
+#       libfitsio.a
+# Use configure to generate the real Makefile
+#
+#       JDD
+#       NASA GSFC
+#       March, 1996
+#
+
+SHELL = /bin/sh
+
+all : 
+	@echo "fitsio: Please run configure...."
+
+install :
+	@echo "fitsio: Looks like configure failed. "
+	@echo "fitsio: Please run configure again...."
+        
+clean :
+	@echo "fitsio: nothing to clean up...."
+
+.c.o :
+	${CC} ${CFLAGS} -c $<

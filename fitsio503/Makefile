@@ -52,7 +52,7 @@ all:		stand_alone clean
 
 stand_alone:	libfitsio.a
 
-libfitsio.a:
+libfitsio.a: 
 		@mkdir split.$$$$; \
 		cp fitsio.f split.$$$$; \
 		cp fitsfort.f split.$$$$; \
